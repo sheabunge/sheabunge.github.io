@@ -174,18 +174,9 @@ a.box:active {
     color: #666;
 }
 
-.repo__team {
-    overflow: hidden;
-    margin: 20px -1px 0;
-}
-
-.repo__team img {
-    float: left;
-    width: 23px;
-    height: 23px;
-    border: 1px solid #999;
-    margin: 0 1px;
-    background: #eee;
+.repo__time a {
+	color: #333;
+	text-decoration: none;
 }
 
 
