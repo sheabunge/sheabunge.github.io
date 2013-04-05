@@ -8,6 +8,11 @@
     // Put custom repo descriptions in this object, keyed by repo name.
     var repoDescriptions = {};
 
+	// Repos to exclude from listing
+	var excludeRepos = [
+		"ManageWP-for-Chrome"
+	];
+
     // Return the repo url
     function getRepoUrl(repo) {
         return repoUrls[repo.name] || repo.html_url;
@@ -74,7 +79,8 @@
             });
 
             $.each(repos, function (i, repo) {
-                showRepo(repo);
+				if ( ! repo.fork && $.inArray( repo.name, excludeRepos ) == -1 )
+					showRepo(repo);
             });
 
             // Sort by most-recently pushed to.
