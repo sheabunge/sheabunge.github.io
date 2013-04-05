@@ -1,5 +1,5 @@
 html {
-    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 14px/1.4 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -48,6 +48,7 @@ h1,
 h2,
 h3 {
     margin: 0 0 1em;
+	font-family: "Open Sans Condensed", "Open Sans", sans-serif;
 }
 
 h1, .h1 {
@@ -149,7 +150,7 @@ a.box:active {
     font-size: 1.125em;
 }
 
-.twitter-share-button {
+.social {
     margin-top: 30px;
 }
 
