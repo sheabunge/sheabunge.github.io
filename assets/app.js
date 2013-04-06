@@ -1,4 +1,5 @@
-(function ($, undefined) {
+(function ($) {
+    "use strict";
 
 	var userName = 'bungeshea';
 
@@ -10,7 +11,8 @@
 
 	// Repos to exclude from listing
 	var excludeRepos = [
-		"ManageWP-for-Chrome"
+		'ManageWP-for-Chrome',
+        'code-snippets-gist'
 	];
 
 	// Return the repo url
@@ -21,6 +23,31 @@
 	// Return the repo description
 	function getRepoDesc(repo) {
 		return repoDescriptions[repo.name] || repo.description;
+	}
+
+	// Relative times
+	function prettyDate(rawdate) {
+		var date, seconds, formats, i = 0, f;
+		date = new Date(rawdate);
+		seconds = (new Date() - date) / 1000;
+		formats = [
+			[60, 'seconds', 1],
+			[120, '1 minute ago'],
+			[3600, 'minutes', 60],
+			[7200, '1 hour ago'],
+			[86400, 'hours', 3600],
+			[172800, 'Yesterday'],
+			[604800, 'days', 86400],
+			[1209600, '1 week ago'],
+			[2678400, 'weeks', 604800]
+		];
+
+		while (f = formats[i++]) {
+			if (seconds < f[0]) {
+				return f[2] ? Math.floor(seconds / f[2]) + ' ' + f[1] + ' ago' :  f[1];
+			}
+		}
+		return 'a while ago';
 	}
 
 	// Display a repo's overview (for recent updates section)
@@ -36,7 +63,7 @@
 
 	// Create an entry for the repo in the grid of org repos
 	function showRepo(repo) {
-		var $item = $('<div class="unit-1-3 repo" />');
+		var $item = $('<div draggable="true" class="unit-1-3 repo" />');
 		var $link = $('<a class="box" href="' + getRepoUrl(repo) + '" />');
 
 		$link.append('<h2 class="repo__name">' + repo.name + '</h2>');
@@ -94,30 +121,5 @@
 			});
 		});
 	});
-
-	// Relative times
-	function prettyDate(rawdate) {
-		var date, seconds, formats, i = 0, f;
-		date = new Date(rawdate);
-		seconds = (new Date() - date) / 1000;
-		formats = [
-			[60, 'seconds', 1],
-			[120, '1 minute ago'],
-			[3600, 'minutes', 60],
-			[7200, '1 hour ago'],
-			[86400, 'hours', 3600],
-			[172800, 'Yesterday'],
-			[604800, 'days', 86400],
-			[1209600, '1 week ago'],
-			[2678400, 'weeks', 604800]
-		];
-
-		while (f = formats[i ++]) {
-			if (seconds < f[0]) {
-				return f[2] ? Math.floor(seconds / f[2]) + ' ' + f[1] + ' ago' :  f[1];
-			}
-		}
-		return 'a while ago';
-	}
 
 })(jQuery);
