@@ -12,11 +12,11 @@
 	// Repos to exclude from listing
 	var excludeRepos = [
 		'ManageWP-for-Chrome',
+		'code-snippets-gist'
 	];
 
 	// Repos to include in listing that are not by default (eg: forks, empty repos)
-	var includeRepos = [
-	];
+	var includeRepos = {};
 
 	// Return the repo url
 	function getRepoUrl(repo) {
@@ -106,7 +106,7 @@
 			});
 
 			$.each(repos, function (i, repo) {
-				if ( $.inArray(repo.name, includeRepos) != -1 && repo.size != 0 && ! repo.fork && $.inArray(repo.name, excludeRepos) == -1 )
+				if ( $.inArray(repo.name, includeRepos) != -1 || repo.size != 0 && ! repo.fork && $.inArray(repo.name, excludeRepos) == -1 )
 					showRepo(repo);
 			});
 
