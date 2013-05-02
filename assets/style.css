@@ -116,7 +116,7 @@ ul {
 .box {
     display: block;
     overflow: hidden;
-    min-height: 200px;
+    height: 200px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -139,6 +139,8 @@ a.box:active {
 .site-header {
     float:left;
     text-align: center;
+	height: 484px;
+	overflow: hidden;
 }
 
 .site-header .box {
@@ -146,12 +148,16 @@ a.box:active {
 }
 
 .stats {
-    margin: 0 0 2em;
+    margin: 0 0 1em 0;
     font-size: 1.125em;
 }
 
 .social {
     margin-top: 30px;
+}
+
+#updated-repos li {
+	white-space: nowrap;
 }
 
 /* Content
