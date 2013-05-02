@@ -1,5 +1,5 @@
 (function ($) {
-    "use strict";
+	"use strict";
 
 	var userName = 'bungeshea';
 
@@ -12,7 +12,7 @@
 	// Repos to exclude from listing
 	var excludeRepos = [
 		'ManageWP-for-Chrome',
-        'code-snippets-gist'
+		'code-snippets-gist'
 	];
 
 	// Return the repo url
@@ -61,7 +61,7 @@
 		$(item).appendTo("#updated-repos");
 	}
 
-	// Create an entry for the repo in the grid of org repos
+	// Create an entry for the repo in the grid of repos
 	function showRepo(repo) {
 		var $item = $('<div draggable="true" class="unit-1-3 repo" />');
 		var $link = $('<a class="box" href="' + getRepoUrl(repo) + '" />');
@@ -69,8 +69,6 @@
 		$link.append('<h2 class="repo__name">' + repo.name + '</h2>');
 		$link.append('<p class="repo__info">' + repo.watchers + ' stargazers &middot; ' + repo.language + '</p>');
 		$link.append('<p class="repo__desc">' + getRepoDesc(repo) + '</p>');
-
-		$link.append('<p class="repo__time"><a href="' + repo.html_url + '/commits">Last updated <time datetime="' + repo.pushed_at + '">' + prettyDate(repo.pushed_at) + '</time></a></span>');
 
 		$link.appendTo($item);
 		$item.appendTo('#repos');
@@ -105,7 +103,7 @@
 			});
 
 			$.each(repos, function (i, repo) {
-				if ( ! repo.fork && $.inArray(repo.name, excludeRepos) == -1 )
+				if ( ! repo.fork && $.inArray(repo.name, excludeRepos) == -1 && repo.size != 0 )
 					showRepo(repo);
 			});
 
