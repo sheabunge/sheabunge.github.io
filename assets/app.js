@@ -3,11 +3,24 @@
 
 	var userName = 'bungeshea';
 
-	// Put custom repo URL's in this object, keyed by repo name.
+	// Put custom repo URLs in this object, keyed by repo name.
 	var repoUrls = {};
 
 	// Put custom repo descriptions in this object, keyed by repo name.
 	var repoDescriptions = {};
+
+	// Put custom repo homepage URLs in this object, keyed by repo name.
+	var repoHomepages = {};
+
+	// Put custom language definitions in this object, keyed by repo name.
+	var repoLanguages = {
+		'code-snippets': "PHP",
+		'GitHub-for-Chrome': "Chrome App",
+		'LockCode': "NXC",
+		'nxc-lib': "NXC",
+		'npp-nxc': "XML",
+		'aCmd': "Shell"
+	};
 
 	// Repos to exclude from listing
 	var excludeRepos = [
@@ -26,6 +39,16 @@
 	// Return the repo description
 	function getRepoDesc(repo) {
 		return repoDescriptions[repo.name] || repo.description;
+	}
+
+	// Return the repo homepage url
+	function getRepoHomepage(repo) {
+		return repoHomepages[repo.name] || repo.homepage;
+	}
+
+	// Return the repo language
+	function getRepoLang(repo) {
+		return repoLanguages[repo.name] || repo.language;
 	}
 
 	// Relative times
@@ -70,11 +93,14 @@
 		var $link = $('<a class="box" href="' + getRepoUrl(repo) + '" />');
 
 		$link.append('<h2 class="repo__name">' + repo.name + '</h2>');
-		$link.append('<p class="repo__info">' + repo.watchers + ' stargazers &middot; ' + repo.language + '</p>');
+		$link.append('<p class="repo__info">' + repo.watchers + ' stargazers &middot; ' + getRepoLang(repo) + '</p>');
 		$link.append('<p class="repo__desc">' + getRepoDesc(repo) + '</p>');
 
 		var $icons = $('<p class="repo__icons" />');
-		$icons.append('<a class="genericon genericon-home" href="' + repo.homepage + '"></a>');
+
+		if ( getRepoHomepage(repo) )
+			$icons.append('<a class="genericon genericon-home" href="' + getRepoHomepage(repo) + '"></a>');
+
 		$icons.append('<a class="genericon genericon-star" href="' + getRepoUrl(repo) + '/stargazers"></a>');
 		$icons.append('<a class="genericon genericon-share" href="' + getRepoUrl(repo) + '/network"></a>');
 
