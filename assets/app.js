@@ -93,7 +93,8 @@
 		var $link = $('<a class="box" href="' + getRepoUrl(repo) + '" />');
 
 		$link.append('<h2 class="repo__name">' + repo.name + '</h2>');
-		$link.append('<p class="repo__info">' + repo.watchers + ' stargazers &middot; ' + getRepoLang(repo) + '</p>');
+
+		$link.append('<p class="repo__info">' + repo.watchers + (repo.watchers == 1 ? ' stargazer' : ' stargazers') + ' &middot; ' + getRepoLang(repo) + '</p>');
 		$link.append('<p class="repo__desc">' + getRepoDesc(repo) + '</p>');
 
 		var $icons = $('<p class="repo__icons" />');
