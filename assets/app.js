@@ -73,6 +73,12 @@
 		$link.append('<p class="repo__info">' + repo.watchers + ' stargazers &middot; ' + repo.language + '</p>');
 		$link.append('<p class="repo__desc">' + getRepoDesc(repo) + '</p>');
 
+		var $icons = $('<p class="repo__icons" />');
+		$icons.append('<a class="genericon genericon-home" href="' + repo.homepage + '"></a>');
+		$icons.append('<a class="genericon genericon-star" href="' + getRepoUrl(repo) + '/stargazers"></a>');
+		$icons.append('<a class="genericon genericon-share" href="' + getRepoUrl(repo) + '/network"></a>');
+
+		$icons.appendTo($link);
 		$link.appendTo($item);
 		$item.appendTo('#repos');
 	}

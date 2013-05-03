@@ -1,44 +1,44 @@
 html {
-    font: 14px/1.4 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+	font: 14px/1.4 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
-    max-width: 940px;
-    padding: 20px 10px;
-    margin: 0 auto;
-    background: #f5f5f5;
+	max-width: 940px;
+	padding: 20px 10px;
+	margin: 0 auto;
+	background: #f5f5f5;
 }
 
 img {
-    border: 0;
-    -ms-interpolation-mode: bicubic;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
 }
 
 /* Links
    ========================================================================== */
 
 a {
-    color: #0084b4;
-    text-decoration: none;
+	color: #0084b4;
+	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-    color: #005E80;
-    text-decoration: underline;
+	color: #005E80;
+	text-decoration: underline;
 }
 
 a:focus {
-    outline: thin dotted;
+	outline: thin dotted;
 }
 
 a:hover,
 a:active {
-    outline: 0;
+	outline: 0;
 }
 
 /* Typography
@@ -47,26 +47,26 @@ a:active {
 h1,
 h2,
 h3 {
-    margin: 0 0 1em;
+	margin: 0 0 1em;
 	font-family: "Open Sans Condensed", "Open Sans", sans-serif;
 }
 
 h1, .h1 {
-    margin: 0 0 0.25em;
-    font-size: 3em;
+	margin: 0 0 0.25em;
+	font-size: 3em;
 }
 
 h2, .h2 {
-    font-size: 1.25em;
+	font-size: 1.25em;
 }
 
 h3, .h3 {
-    font-size: 1.125em;
-    color: #777;
+	font-size: 1.125em;
+	color: #777;
 }
 
 p {
-    margin: 0 0 1em;
+	margin: 0 0 1em;
 }
 
 /* Lists
@@ -74,9 +74,9 @@ p {
 
 ol,
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 
@@ -85,75 +85,80 @@ ul {
    ========================================================================== */
 
 .grid {
-    display: block;
-    padding: 0;
-    margin: 0 -10px;
-    /* remove intra-unit whitespace for all font families */
-    letter-spacing: -0.31em;
-    *letter-spacing: normal;
-    word-spacing: -0.43em;
-    /* protect against WebKit bug with optimizelegibility */
-    text-rendering: optimizespeed;
+	display: block;
+	padding: 0;
+	margin: 0 -10px;
+	/* remove intra-unit whitespace for all font families */
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	word-spacing: -0.43em;
+	/* protect against WebKit bug with optimizelegibility */
+	text-rendering: optimizespeed;
 }
 
 .unit-1-3 {
-    width: 300px;
-    display: inline-block;
-    margin: 0 10px 20px;
-    /* controls vertical positioning of units */
-    vertical-align: top;
-    /* reset defaults */
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-rendering: auto;
-    *display: inline;
-    *zoom: 1;
+	width: 300px;
+	display: inline-block;
+	margin: 0 10px 20px;
+	/* controls vertical positioning of units */
+	vertical-align: top;
+	/* reset defaults */
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+	*display: inline;
+	*zoom: 1;
 }
 
 /* Box
    ========================================================================== */
 
 .box {
-    display: block;
-    overflow: hidden;
-    height: 200px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-decoration: none;
-    background: #fff;
+	display: block;
+	overflow: hidden;
+	height: 200px;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	text-decoration: none;
+	background: #fff;
+	overflow: hidden;
+}
+
+a.box {
+	cursor: default;
 }
 
 a.box:hover,
 a.box:focus,
 a.box:active {
-    padding: 12px;
-    border-width: 4px;
-    border-color: #005E80;
-    text-decoration: none;
+	padding: 12px;
+	border-width: 4px;
+	border-color: #005E80;
+	text-decoration: none;
 }
 
 /* Header
    ========================================================================== */
 
 .site-header {
-    float:left;
-    text-align: center;
+	float:left;
+	text-align: center;
 	height: 484px;
 	overflow: hidden;
 }
 
 .site-header .box {
-    min-height: 452px;
+	min-height: 452px;
 }
 
 .stats {
-    margin: 0 0 1em 0;
-    font-size: 1.125em;
+	margin: 0 0 1em 0;
+	font-size: 1.125em;
 }
 
 .social {
-    margin-top: 30px;
+	margin-top: 30px;
 }
 
 #updated-repos li {
@@ -164,20 +169,21 @@ a.box:active {
    ========================================================================== */
 
 .repo__name {
-    margin: 0 0 0.1em;
-    font-size: 1.5em;
+	margin: 0 0 0.1em;
+	font-size: 1.5em;
+	cursor: auto;
 }
 
 .repo__info {
-    display: block;
-    margin: 0 0 1.25em;
-    font-size: 12px;
-    font-weight: bold;
-    color: #999;
+	display: block;
+	margin: 0 0 1.25em;
+	font-size: 12px;
+	font-weight: bold;
+	color: #999;
 }
 
 .repo__desc {
-    color: #666;
+	color: #666;
 }
 
 .repo__time a {
@@ -185,6 +191,11 @@ a.box:active {
 	text-decoration: none;
 }
 
+.repo__icons .genericon {
+	height: 42px;
+	font-size: 42px;
+	width: 42px;
+}
 
 /* =============================================================================
    Small screen adjustments
@@ -192,16 +203,16 @@ a.box:active {
 
 @media (max-width:960px) {
 
-    body {
-        max-width: 620px;
-    }
+	body {
+		max-width: 620px;
+	}
 
 }
 
 @media (max-width:640px) {
 
-    body {
-        max-width: 300px;
-    }
+	body {
+		max-width: 300px;
+	}
 
 }
