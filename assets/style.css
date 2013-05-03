@@ -203,16 +203,12 @@ a.box:active {
 	color: #666;
 }
 
-.repo__time a {
-	color: #333;
-	text-decoration: none;
-}
-
 .repo__icons .genericon {
 	height: 35px;
 	font-size: 35px;
 	width: 35px;
-	margin: 10px;
+	padding: 5px;
+	margin: 5px;
 }
 
 .repo__icons .genericon:first-child {
