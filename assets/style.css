@@ -161,6 +161,23 @@ a.box:active {
 	margin-top: 30px;
 }
 
+.social .genericon {
+	color: #777;
+	height: 35px;
+	font-size: 35px;
+	width: 35px;
+	text-align: center;
+	margin-left: 7px;
+}
+
+.social .genericon:first-child {
+	margin-left: auto;
+}
+
+.social .genericon:hover {
+	color: #0084b4;
+}
+
 #updated-repos li {
 	white-space: nowrap;
 }
@@ -192,9 +209,18 @@ a.box:active {
 }
 
 .repo__icons .genericon {
-	height: 42px;
-	font-size: 42px;
-	width: 42px;
+	height: 35px;
+	font-size: 35px;
+	width: 35px;
+	margin: 10px;
+}
+
+.repo__icons .genericon:first-child {
+	margin-left: auto;
+}
+
+.repo__icons .genericon:last-child {
+	margin-right: auto;
 }
 
 /* =============================================================================
