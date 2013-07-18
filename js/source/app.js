@@ -1,5 +1,5 @@
 (function ($) {
-	"use strict";
+	'use strict';
 
 	/**
 	 * The GitHub username
@@ -30,12 +30,12 @@
 	 * @type {Object}
 	 */
 	var repoLanguages = {
-		'code-snippets': "PHP",
-		'GitHub-for-Chrome': "Chrome App",
-		'LockCode': "NXC",
-		'nxc-lib': "NXC",
-		'npp-nxc': "XML",
-		'aCmd': "Shell"
+		'code-snippets': 'PHP',
+		'GitHub-for-Chrome': 'Chrome App',
+		'LockCode': 'NXC',
+		'nxc-lib': 'NXC',
+		'npp-nxc': 'XML',
+		'aCmd': 'Shell'
 	};
 
 	/**
@@ -128,7 +128,7 @@
 		item +=     ' &middot; <span class="time"><a href="' + repo.html_url + '/commits">' + prettyDate(repo.pushed_at) + '</a></span>';
 		item += '</li>';
 
-		$(item).appendTo("#updated-repos");
+		$(item).appendTo('#updated-repos');
 	}
 
 	/**
