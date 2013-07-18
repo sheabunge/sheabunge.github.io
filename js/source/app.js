@@ -68,7 +68,8 @@
 			[2678400, 'weeks', 604800]
 		];
 
-		while (f = formats[i++]) {
+		for ( i = 0; i < formats.length; i++ ) {
+			f = formats[i];
 			if (seconds < f[0]) {
 				return f[2] ? Math.floor(seconds / f[2]) + ' ' + f[1] + ' ago' :  f[1];
 			}
@@ -94,7 +95,7 @@
 
 		$link.append('<h2 class="repo__name">' + repo.name + '</h2>');
 
-		$link.append('<p class="repo__info">' + repo.watchers + (repo.watchers == 1 ? ' stargazer' : ' stargazers') + ' &middot; ' + getRepoLang(repo) + '</p>');
+		$link.append('<p class="repo__info">' + repo.watchers + (repo.watchers === 1 ? ' stargazer' : ' stargazers') + ' &middot; ' + getRepoLang(repo) + '</p>');
 		$link.append('<p class="repo__desc">' + getRepoDesc(repo) + '</p>');
 
 		var $icons = $('<p class="repo__icons" />');
@@ -139,7 +140,7 @@
 			});
 
 			$.each(repos, function (i, repo) {
-				if ( $.inArray(repo.name, includeRepos) != -1 || repo.size != 0 && ! repo.fork && $.inArray(repo.name, excludeRepos) == -1 )
+				if ( $.inArray(repo.name, includeRepos) !== -1 || repo.size !== 0 && ! repo.fork && $.inArray(repo.name, excludeRepos) === -1 )
 					showRepo(repo);
 			});
 
