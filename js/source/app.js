@@ -1,18 +1,34 @@
 (function ($) {
 	"use strict";
 
+	/**
+	 * The GitHub username
+	 * @type {String}
+	 */
 	var userName = 'bungeshea';
 
-	// Put custom repo URLs in this object, keyed by repo name.
+	/**
+	 * Put custom repo URLs in this object, keyed by repo name
+	 * @type {Object}
+	 */
 	var repoUrls = {};
 
-	// Put custom repo descriptions in this object, keyed by repo name.
+	/**
+	 * Put custom repo descriptions in this object, keyed by repo name
+	 * @type {Object}
+	 */
 	var repoDescriptions = {};
 
-	// Put custom repo homepage URLs in this object, keyed by repo name.
+	/**
+	 * Put custom repo homepage URLs in this object, keyed by repo name
+	 * @type {Object}
+	 */
 	var repoHomepages = {};
 
-	// Put custom language definitions in this object, keyed by repo name.
+	/**
+	 * Put custom language definitions in this object, keyed by repo name
+	 * @type {Object}
+	 */
 	var repoLanguages = {
 		'code-snippets': "PHP",
 		'GitHub-for-Chrome': "Chrome App",
@@ -22,36 +38,60 @@
 		'aCmd': "Shell"
 	};
 
-	// Repos to exclude from listing
+	/**
+	 * Repos to exclude from listing
+	 * @type {Array}
+	 */
 	var excludeRepos = [
 		'ManageWP-for-Chrome',
 		'code-snippets-gist'
 	];
 
-	// Repos to include in listing that are not by default (eg: forks, empty repos)
+	/**
+	 * Repos to include in listing that are not by default (eg: forks, empty repos)
+	 * @type {Object}
+	 */
 	var includeRepos = {};
 
-	// Return the repo url
+	/**
+	 * Return the URL for a repo
+	 * @param  {Object} repo The repo to retrieve the URL for
+	 * @return {String}      The URL belonging to the repo
+	 */
 	function getRepoUrl(repo) {
 		return repoUrls[repo.name] || repo.html_url;
 	}
 
-	// Return the repo description
+	/**
+	 * Return the description of a repo
+	 * @param  {Object} repo The repo to retrieve the description for
+	 * @return {String}      The description belonging to the repo
+	 */
 	function getRepoDesc(repo) {
 		return repoDescriptions[repo.name] || repo.description;
 	}
 
-	// Return the repo homepage url
+	/**
+	 * Return the homepage URL of a repo
+	 * @param  {Object} repo The repo to retrieve the homepage URL for
+	 * @return {String}      The homepage URL belonging to the repo
+	 */
 	function getRepoHomepage(repo) {
 		return repoHomepages[repo.name] || repo.homepage;
 	}
 
-	// Return the repo language
+	/**
+	 * Return the language of a repo
+	 * @param  {Object} repo The repo to retrieve the language for
+	 * @return {String}      The language the repo is written in
+	 */
 	function getRepoLang(repo) {
 		return repoLanguages[repo.name] || repo.language;
 	}
 
-	// Relative times
+	/**
+	 * Turn a raw date into a relative time
+	 */
 	function prettyDate(rawdate) {
 		var date, seconds, formats, i = 0, f;
 		date = new Date(rawdate);
@@ -77,7 +117,10 @@
 		return 'a while ago';
 	}
 
-	// Display a repo's overview (for recent updates section)
+	/**
+	 * Display a repo's overview (for recent updates section)
+	 * @param  {Object} repo The repo to show the overview of
+	 */
 	function showRepoOverview(repo) {
 		var item;
 		item  = '<li>';
@@ -88,7 +131,10 @@
 		$(item).appendTo("#updated-repos");
 	}
 
-	// Create an entry for the repo in the grid of repos
+	/**
+	 * Create an entry for the repo in the grid of repos
+	 * @param  {Object} repo The repo to create the entry for
+	 */
 	function showRepo(repo) {
 		var $item = $('<div draggable="true" class="unit-1-3 repo" />');
 		var $link = $('<a class="box" href="' + getRepoUrl(repo) + '" />');
@@ -116,7 +162,7 @@
 		$(function () {
 			$('#num-repos').text(repos.length);
 
-			// Convert pushed_at to Date.
+			/* Convert pushed_at to Date */
 			$.each(repos, function (i, repo) {
 				repo.pushed_at = new Date(repo.pushed_at);
 
@@ -132,7 +178,7 @@
 				repo.hotness += weightForWatchers * repo.watchers / createdDelta;
 			});
 
-			// Sort by hotness.
+			/* Sort by hotness */
 			repos.sort(function (a, b) {
 				if (a.hotness < b.hotness) return 1;
 				if (b.hotness < a.hotness) return -1;
@@ -144,7 +190,7 @@
 					showRepo(repo);
 			});
 
-			// Sort by most-recently pushed to.
+			/* Sort by most-recently pushed to */
 			repos.sort(function (a, b) {
 				if (a.pushed_at < b.pushed_at) return 1;
 				if (b.pushed_at < a.pushed_at) return -1;
