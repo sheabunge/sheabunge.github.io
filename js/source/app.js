@@ -30,12 +30,11 @@
 	 * @type {Object}
 	 */
 	var repoLanguages = {
-		'code-snippets': 'PHP',
 		'GitHub-for-Chrome': 'Chrome App',
 		'LockCode': 'NXC',
 		'nxc-lib': 'NXC',
 		'npp-nxc': 'XML',
-		'aCmd': 'Shell'
+		'aCmd': 'Bash'
 	};
 
 	/**
