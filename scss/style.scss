@@ -1,3 +1,7 @@
+
+@import 'compass/css3';
+@import 'genericons';
+
 html {
 	font: 14px/1.4 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #333;
@@ -23,22 +27,23 @@ img {
 a {
 	color: #0084b4;
 	text-decoration: none;
-}
 
-a:hover,
-a:focus,
-a:active {
-	color: #005E80;
-	text-decoration: underline;
-}
+	&:hover,
+	&:focus,
+ 	&:active {
+		color: #005E80;
+		text-decoration: underline;
+	}
 
-a:focus {
-	outline: thin dotted;
-}
+	&:focus {
+		outline: thin dotted;
+	}
 
-a:hover,
-a:active {
-	outline: 0;
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+
 }
 
 /* Typography
@@ -127,15 +132,15 @@ ul {
 
 a.box {
 	cursor: default;
-}
 
-a.box:hover,
-a.box:focus,
-a.box:active {
-	padding: 12px;
-	border-width: 4px;
-	border-color: #005E80;
-	text-decoration: none;
+	&:hover,
+	&:focus,
+	&:active {
+		padding: 12px;
+		border-width: 4px;
+		border-color: #005E80;
+		text-decoration: none;
+	}
 }
 
 /* Header
