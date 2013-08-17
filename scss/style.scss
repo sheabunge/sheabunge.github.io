@@ -98,8 +98,7 @@ ul {
 }
 
 
-/* =============================================================================
-   Structure
+/* Structure
    ========================================================================== */
 
 .grid {
@@ -177,23 +176,35 @@ a.box {
 
 .social {
 	margin-top: 30px;
-}
 
-.social .genericon {
-	color: #777;
-	height: 35px;
-	font-size: 35px;
-	width: 35px;
-	text-align: center;
-	margin-left: 7px;
-}
+	.genericon {
+		color: #777;
+		height: 35px;
+		font-size: 35px;
+		width: 35px;
+		text-align: center;
+		margin-left: 7px;
 
-.social .genericon:first-child {
-	margin-left: auto;
-}
+		&:first-child {
+			margin-left: auto;
+		}
+	}
 
-.social .genericon:hover {
-	color: #0084b4;
+	.genericon-wordpress:before {
+		color: #21759b;
+	}
+
+	.genericon-twitter:before {
+		color: #33ccff;
+	}
+
+	.genericon-googleplus:before {
+		color: #dd4b39;
+	}
+
+	.genericon-github:before {
+		color: #171515;
+	}
 }
 
 #updated-repos li {
