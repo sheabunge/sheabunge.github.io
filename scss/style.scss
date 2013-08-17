@@ -163,10 +163,10 @@ a.box {
 	text-align: center;
 	height: 484px;
 	overflow: hidden;
-}
 
-.site-header .box {
-	min-height: 452px;
+	.box {
+		min-height: 452px;
+	}
 }
 
 .stats {
@@ -238,12 +238,13 @@ a.box {
 	width: 35px;
 	padding: 5px;
 	margin: 5px;
-}
 
-.repo__icons .genericon:first-child {
-	margin-left: auto;
-}
 
-.repo__icons .genericon:last-child {
-	margin-right: auto;
+	&:first-child {
+		margin-left: auto;
+	}
+
+	&:last-child {
+		margin-right: auto;
+	}
 }
