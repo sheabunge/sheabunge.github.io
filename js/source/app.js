@@ -5,7 +5,7 @@
 	 * The GitHub username
 	 * @type {String}
 	 */
-	var userName = 'bungeshea';
+	var userName = 'sheabunge';
 
 	/**
 	 * Put custom repo URLs in this object, keyed by repo name
