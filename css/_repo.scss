@@ -1,0 +1,34 @@
+
+.repo-name {
+	margin: 0 0 0.1em;
+	font-size: 1.5em;
+	cursor: auto;
+}
+
+.repo-info {
+	display: block;
+	margin: 0 0 1.25em;
+	font-size: 12px;
+	font-weight: bold;
+	color: #999;
+}
+
+.repo-desc {
+	color: #666;
+}
+
+.repo-icons .genericon {
+	height: 35px;
+	font-size: 35px;
+	width: 35px;
+	padding: 5px;
+	margin: 5px;
+
+	&:first-child {
+		margin-left: auto;
+	}
+
+	&:last-child {
+		margin-right: auto;
+	}
+}

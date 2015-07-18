@@ -1,14 +1,5 @@
 # Grunt
 node_modules/
 
-# Sass/Compass
+# Sass
 .sass-cache/
-
-# Sublime Text
-*.sublime-workspace
-
-# OS
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-.DS_Store

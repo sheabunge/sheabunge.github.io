@@ -1,23 +1,25 @@
 {
-  "name": "bungeshea.github.io",
-  "homepage": "http://bungeshea.github.io",
+  "name": "sheabunge.github.io",
+  "homepage": "http://sheabunge.github.io",
   "license": "MIT",
   "author": {
     "name": "Shea Bunge",
     "email": "info@bungeshea.com",
     "url": "http://bungeshea.com"
   },
-  "repository" : {
+  "repository": {
     "type": "git",
-    "url": "http://github.com/bungeshea/bungeshea.github.io.git"
+    "url": "http://github.com/sheabunge/sheabunge.github.io.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.4.4",
-    "grunt-contrib-compass": "~0.3.0",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-imagemin": "~0.1.4",
-    "matchdep": "~0.1.2"
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-contrib-imagemin": "^0.1.4",
+    "grunt-contrib-jshint": "^0.6.5",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.4.4",
+    "grunt-csso": "^0.7.1",
+    "grunt-sass": "^1.0.0",
+    "load-grunt-tasks": "^3.2.0"
   }
 }

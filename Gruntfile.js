@@ -1,103 +1,71 @@
 module.exports = function(grunt) {
 	'use strict';
 
-	/* Load all Grunt tasks */
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
 
-		/**
-		 * Watch for changes in files
-		 * and run tasks when they are modified
-		 */
 		watch: {
 
-			/**
-			 * All stylesheets, excluding those needing
-			 * to be copied to theme root
-			 *
-			 * Save time by excluding the special style tasks
-			 */
-			styles: {
-				files: ['scss/**/*.{scss,sass}'],
-				tasks: ['compass'],
-				options: {
-					debounceDelay: 500
-				}
+			css: {
+				files: ['css/**/*.scss'],
+				tasks: ['css']
 			},
 
-			/**
-			 * Vendor and source JavaScript
-			 */
-			scripts: {
-				files: ['js/source/**/*.js', 'js/vendor/**/*.js'],
-				tasks: ['jshint', 'uglify'],
-				options: {
-					debounceDelay: 500
-				}
-			},
-
-			/**
-			 * Send commands to the LiveReload browser extension
-			 */
-			livereload: {
-				options: {
-					livereload: true
-				},
-				files: [
-					'css/*.css',
-					'js/*.js',
-					'*.html',
-					'*.php',
-					'images/**/*.{png,jpg,jpeg,gif,webp,svg}'
-				]
+			js: {
+				files: ['js/**/*.js', '!js/min/**/*.js'],
+				tasks: ['js']
 			}
 		},
 
-		/**
-		 * Lint the Gruntfile and
-		 * source JavaScript with JSHint
-		 */
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc',
 				'force': true
 			},
 			gruntfile: ['Gruntfile.js'],
-			source: ['js/source/**/*.js']
+			source: ['js/**/*.js', '!js/vendor/**/*.js', '!js/min/**/*.js']
 		},
 
-		/**
-		 * Compress JavaScript and create source maps
-		 */
 		uglify: {
-
 			app: {
 				options: {
-					sourceMap: 'js/map/source-map-app.js.map'
+					sourceMap: true
 				},
 				files: {
-					'js/app.min.js': [
-						'js/source/app.js'
-					]
+					'js/min/app.js': ['js/app.js']
 				}
 			}
 		},
 
-		/**
-		 * Use Compass to compile Sass stylesheets
-		 */
-		compass: {
-			dist: {}
+		sass: {
+			dist: {
+				cwd: 'css',
+				src: '*.scss',
+				dest: 'css/build',
+				expand: true,
+				ext: '.css'
+			}
 		},
 
-		/**
-		 * Compress images to save bandwidth and
-		 * load times.
-		 *
-		 * This task must be ran manually using `grunt imagemin`
-		 */
+		autoprefixer: {
+			dist: {
+				expand: true,
+				flatten: true,
+				src: 'css/build/*.css',
+				dest: 'css/build'
+			}
+		},
+
+		csso: {
+			dist: {
+				expand: true,
+				flatten: true,
+				src: 'css/build/*.css',
+				dest: 'css/min'
+			}
+		},
+
 		imagemin: {
 		    dist: {
 		        options: {
@@ -115,5 +83,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('default', ['jshint', 'uglify', 'compass'] );
+	grunt.registerTask( 'js', ['jshint', 'uglify'] );
+	grunt.registerTask( 'css', ['sass', 'autoprefixer', 'csso'] );
+	grunt.registerTask( 'default', ['css', 'js'] );
 };

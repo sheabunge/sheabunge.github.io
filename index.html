@@ -1,64 +1,46 @@
 <!DOCTYPE html>
-<html class="no-js">
-	<head>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Shea Bunge on GitHub</title>
 
-		<meta charset="utf-8">
-		<title>Shea Bunge on GitHub</title>
+	<link rel="stylesheet" href="css/min/style.css">
+	<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
+	<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/2ffc659f-266e-4099-8773-d04e3bf2cae0">
+	<link rel="icon" href="//github.com/favicon.ico">
 
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider">
-		<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/2ffc659f-266e-4099-8773-d04e3bf2cae0">
-		<link rel="icon" href="//github.com/favicon.ico">
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-33530883-2']);
+	_gaq.push(['_trackPageview']);
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
-		<script src="js/app.min.js"></script>
-
-		<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-33530883-2']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-		</script>
-
-	</head>
-	<body>
-
-		<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a>.</p>
-		<![endif]-->
-
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+</head>
+<body>
+	<div class="container">
 		<div class="grid">
-			<div class="unit-1-3 site-header">
-				<div class="box">
-					<div class="site-logo">
-						<img src="http://www.gravatar.com/avatar/b0ebe143f1e63e2c2ba3d7cf3afacf3a" alt="">
-						<h1>Shea Bunge</h1>
-					</div>
-					<h2>WordPress developer</h2>
-					<p class="stats">
-						<a href="https://github.com/sheabunge"><strong id="num-repos">View</strong> public repos</a>
-					</p>
-					<h3>Recently updated</h3>
-					<ol id="updated-repos"></ol>
+			<div class="site-header box">
+				<h1>Shea Bunge</h1>
 
-					<div class="social">
-						<a href="https://github.com/sheabunge" class="genericon genericon-github" title="GitHub"></a>
-						<a href="https://twitter.com/sheabunge" class="genericon genericon-twitter" title="Twitter"></a>
-						<a href="http://bungeshea.com" class="genericon genericon-wordpress" title="WordPress"></a>
-						<a href="https://plus.google.com/+SheaBunge?rel=author" class="genericon genericon-googleplus" title="Google+"></a>
-					</div>
-
+				<div class="social">
+					<a href="https://github.com/sheabunge" class="genericon genericon-github" title="GitHub"></a>
+					<a href="https://profiles.wordpress.org/bungeshea" class="genericon genericon-wordpress" title="WordPress.org"></a>
+					<a href="http://bungeshea.com" class="genericon genericon-website" title="Website"></a>
+					<a href="https://twitter.com/sheabunge" class="genericon genericon-twitter" title="Twitter"></a>
+					<a href="https://plus.google.com/+SheaBunge?rel=author" class="genericon genericon-googleplus" title="Google+"></a>
 				</div>
+
+				<p class="stats">
+					<a href="https://github.com/sheabunge"><strong id="num-repos">View</strong> public repos</a>
+				</p>
 			</div>
-
-			<div class="site-content" id="repos"></div>
 		</div>
-
-	</body>
+	</div>
+	<script src="js/min/app.js"></script>
+</body>
 </html>
