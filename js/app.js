@@ -216,19 +216,17 @@
 		}
 	};
 
-	if (window.localStorage.repos !== 'undefined') {
+	if (window.localStorage.getItem('repos') === null) {
+		app.fetchSaveDisplayRepos();
+	} else {
 		var expiry = 30*60*1000; // 30 mins
 
 		if (window.localStorage.saveTime + expiry > Date.now()) {
-			window.localStorage.repos = 'undefined';
-			window.localStorage.saveTime = 'undefined';
 			app.fetchSaveDisplayRepos();
 		} else {
 			var repos = JSON.parse(window.localStorage.repos);
 			app.displayRepos(repos);
 		}
-	} else {
-		app.fetchSaveDisplayRepos();
 	}
 
 }());
