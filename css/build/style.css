@@ -563,17 +563,6 @@ p {
           align-content: flex-end; }
 
 .box {
-  display: block;
-  float: left;
-  width: 300px;
-  margin: 7px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: #fff; }
-
-.box {
-  text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -588,7 +577,13 @@ p {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  width: 300px;
+  margin: 7px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff; }
 
 .social {
   margin-bottom: 10px; }

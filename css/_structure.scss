@@ -8,8 +8,10 @@
 }
 
 .box {
-    display: block;
-    float: left;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
     width: 300px;
     margin: 7px;
     padding: 15px;
