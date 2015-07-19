@@ -149,7 +149,7 @@
 			icons.innerHTML = '';
 
 			if (this.getRepoHomepage(repo)) {
-				icons.innerHTML = '<a class="genericon genericon-home" href="' + this.getRepoHomepage(repo) + '"></a>';
+				icons.innerHTML = '<a class="genericon genericon-website" href="' + this.getRepoHomepage(repo) + '"></a>';
 			}
 			icons.innerHTML += '<a class="genericon genericon-star" href="' + this.getRepoUrl(repo) + '/stargazers"></a>';
 			icons.innerHTML += '<a class="genericon genericon-sitemap" href="' + this.getRepoUrl(repo) + '/network"></a>';
